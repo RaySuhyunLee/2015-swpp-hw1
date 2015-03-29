@@ -75,7 +75,9 @@ class IndexController < ApplicationController
 	def clearData
 		UserAccount.destroy_all
 
-		redirect_to :action => "index"
+		respond_to do |format|
+			format.json { render :json => {} }
+		end
 	end
 
 	def data
