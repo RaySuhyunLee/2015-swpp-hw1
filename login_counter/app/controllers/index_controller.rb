@@ -66,7 +66,7 @@ class IndexController < ApplicationController
 				$error_code = nil
 				user = UserAccount.create(username: @id, pass: @pass, count: 1)
 				msg = { :user_name => @id, :login_count => user.count }
-				format.html { redirect_to :action => "login" }
+				format.html
 				format.json { render :json => msg } 
 			end
 		end
