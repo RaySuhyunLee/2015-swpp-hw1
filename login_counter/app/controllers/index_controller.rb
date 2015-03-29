@@ -64,7 +64,7 @@ class IndexController < ApplicationController
 				format.json { render :json => msg }
 			else
 				$error_code = nil
-				user = UserAccount.create(username: @id, pass: @pass, count: 1)
+				user = UserAccount.create(username: @id, pass: @pass, count: 0)
 				msg = { :user_name => @id, :login_count => user.count }
 				format.html
 				format.json { render :json => msg } 
