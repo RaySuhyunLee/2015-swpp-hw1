@@ -1,12 +1,13 @@
 <h1>Hello, TA!</h1>
 <p><%= @message %></p>
-<form action="login" method="post" target="_self">
+<div>
 	<p>
-		ID: <input type="text" name="id">
+		Username: <input type="text" id="id">
 	</p>
 	<p>
-		PASS: <input type="password" name="password">
+		Password: <input type="password" id="pass">
 	</p>
-	<input type="submit" value="Login" >
-	<input type="submit" formaction="signup" value="Add User">
-</form>
+	<button id="button_login">Login</button>
+	<button id="button_signup">Add User</button>
+</div>
+	

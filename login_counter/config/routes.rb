@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  get 'index/index'
-	get 'index/data'
-	get 'index', to: 'index'
+	
 	root 'index#index'
+
+	get 'index/index'
+	get 'data/index'
+	get '/index', to: 'index#index'
+	get '/data', to: 'data#index'
 
 	post 'index/login'
 	post 'index/signup'
