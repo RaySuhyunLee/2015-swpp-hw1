@@ -15,7 +15,7 @@ sendAjaxRequest = (url_str) ->
 		success: (data, status, response) ->
 			e = data.error_code
 			if e?
-				$('#message_box').text(error_messages[-e])
+				$('#message_box').text(error_messages[-(e+1)])
 		error: ->
 		dataType: "json"
 
