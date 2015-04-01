@@ -2,15 +2,12 @@ Rails.application.routes.draw do
 	
 	root 'index#index'
 
-	get 'index/index'
 	get 'index/logged'
-	get 'data/index'
-	get '/index', to: 'index#index'
 	get '/data', to: 'data#index'
 
-	post 'index/login'
-	post 'index/signup'
-	post 'index/clearData'
+	post '/login', to: 'index#login'
+	post '/signup', to: 'index#signup'
+	post 'clearData', to: 'index#clearData'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

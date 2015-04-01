@@ -1,8 +1,8 @@
 $(document).ready ->
 	$('#button_login').click ->
-		sendAjaxRequest('index/login')
+		sendAjaxRequest('/login')
 	$('#button_signup').click ->
-		sendAjaxRequest('index/signup')
+		sendAjaxRequest('/signup')
 	$('#message_box').text(default_message)
 
 sendAjaxRequest = (url_str) ->
