@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 	get 'index/index'
 	get 'index/logged'
 	get 'data/index'
-	get 'login/index'
 	get '/index', to: 'index#index'
 	get '/data', to: 'data#index'
 

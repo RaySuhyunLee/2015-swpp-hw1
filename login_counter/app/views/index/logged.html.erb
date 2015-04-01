@@ -1,3 +1,3 @@
-<p id="text_username">Welcome </p>
-<p id="text_count">You have logged in times.</p>
+<p>Welcome, <%= @name %></p>
+<p>You have logged in <%= @count %> times.</p>
 <%= button_to "logout", index_path, :method => :get %>

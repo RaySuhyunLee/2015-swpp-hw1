@@ -17,8 +17,7 @@ sendAjaxRequest = (url_str) ->
 			if e?
 				$('#message_box').text(error_messages[-(e+1)])
 			else if data.user_name?
-				window.location.replace('/index/logged')
-				$('#text_username').text('Welcome '+data.user_name)
+				window.location.replace('/index/logged?name='+data.user_name+'&count='+data.login_count)
 
 		error: ->
 		dataType: "json"
