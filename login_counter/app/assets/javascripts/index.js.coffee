@@ -3,8 +3,8 @@ $(document).ready ->
 		sendAjaxRequest('index/login')
 	$('#button_signup').click ->
 		sendAjaxRequest('index/signup')
-	
-sendAjaxRequest: (url_str) ->
+
+sendAjaxRequest = (url_str) ->
 	$.ajax
 		url: url_str
 		type: 'POST'
@@ -14,3 +14,5 @@ sendAjaxRequest: (url_str) ->
 		success: (data, status, response) ->
 		error: ->
 		dataType: "json"
+
+
