@@ -1,11 +1,12 @@
 <h1>Hello, TA!</h1>
 <p><%= @message %></p>
+<form action="login" method="post" >
 	<p>
 		ID: <input type="text" name="id">
 	</p>
 	<p>
 		PASS: <input type="password" name="password">
 	</p>
-	<%= submit_tag 'Login' %>
-	<%= submit_tag 'Add User', :name => 'signup' %>
+	<input type="submit" value="Login" >
+	<input type="submit" formaction="signup" value="Add User">
 </form>
