@@ -10,24 +10,15 @@ class IndexController < ApplicationController
 
 		respond_to do |format|
 			if @id.length < 5 or @id.length > 20
-				$error_code = -1
-				format.html { redirect_to :action => "index" }
 				format.json { render :json => { :error_code => -1 } }
 			elsif @pass.length < 8 or @pass.length > 20
-				$error_code = -2
-				format.html { redirect_to :action => "index" }
 				format.json { render :json => { :error_code => -2 } }
-
 			elsif @user.nil?
-				$error_code = -4
-				format.html { redirect_to :action => "index" }
 				format.json { render :json => { :error_code => -4 } }
 			else
-				$error_code = nil
 				@user.count += 1
 				@user.save
 
-				format.html { }
 				format.json { render :json => { :user_name => @user.username, :login_count => @user.count } }
 			end
 		end
