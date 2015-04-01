@@ -1,24 +1,13 @@
 class IndexController < ApplicationController
 	def index
-		case $error_code
-		when -1
-			@message = "The user name should be 5~20 characters long. Please try again."
-		when -2
-			@message = "The password should be 8~20 characters long. Please try again."
-		when -3
-			@message = "This user name already exists. Please try again."
-		when -4
-			@message = "Invalid username and password combination. Please try again."
-		else
-			@message = "Please enter your credentials below"
-		end
 	end
 
   def login
 		@id = params[:id]
-		@pass = params[:password]
+		@pass = params[:pass]
 
 		@user = UserAccount.find_by(username: @id, pass: @pass)
+
 		respond_to do |format|
 			if @id.length < 5 or @id.length > 20
 				$error_code = -1
@@ -38,7 +27,7 @@ class IndexController < ApplicationController
 				@user.count += 1
 				@user.save
 
-				format.html
+				format.html { }
 				format.json { render :json => { :user_name => @user.username, :login_count => @user.count } }
 			end
 		end
