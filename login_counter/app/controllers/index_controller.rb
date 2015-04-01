@@ -80,7 +80,4 @@ class IndexController < ApplicationController
 		end
 	end
 
-	def data
-		@account_all = UserAccount.all
-	end
 end
