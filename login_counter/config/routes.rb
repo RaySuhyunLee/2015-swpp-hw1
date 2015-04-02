@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 	root 'index#index'
 
 	get 'index/logged'
+	get '/logout', to: 'index#logout'
 	get '/data', to: 'data#index'
 
 	post '/login', to: 'index#login'

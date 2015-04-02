@@ -68,4 +68,9 @@ class IndexController < ApplicationController
 
 	end
 
+	def logout
+		session[:username] = nil
+		session[:password] = nil
+	end
+
 end
