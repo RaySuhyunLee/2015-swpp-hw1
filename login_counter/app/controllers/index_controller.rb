@@ -28,21 +28,23 @@ class IndexController < ApplicationController
   end
 
 	def signup
-		@id = params[:id]
-		@pass = params[:pass]
+		id = params[:id]
+		pass = params[:pass]
 
 		respond_to do |format|
-			if @id.length < 5 or @id.length > 20
+			if id.length < 5 or id.length > 20
 				format.json { render :json => { :error_code => -1 } }
-			elsif @pass.length < 8 or @pass.length > 20
+			elsif pass.length < 8 or pass.length > 20
 				format.json { render :json => { :error_code => -2 } }
-			elsif not UserAccount.find_by(username: @id).nil?
-				msg = { :error_code => -3 }
-				format.json { render :json => msg }
+			elsif not UserAccount.find_by(username: id).nil?
+				format.json { render :json => { :error_code => -3 } }
 			else
-				user = UserAccount.create(username: @id, pass: @pass, count: 1)
-				msg = { :user_name => @id, :login_count => user.count }
-				format.json { render :json => msg }
+				user = UserAccount.create(username: id, pass: pass, count: 1)
+
+				session[:username] = user.username
+				session[:password] = user.pass
+
+				format.json { render :json => { :user_name => user.username, :login_count => user.count } }
 			end
 		end
 	end
@@ -56,7 +58,6 @@ class IndexController < ApplicationController
 	end
 
 	def logged
-		
 		if session[:username].nil? || session[:password].nil?
 			redirect_to '/'
 		else
@@ -65,7 +66,6 @@ class IndexController < ApplicationController
 				redirect_to '/'
 			end
 		end
-
 	end
 
 	def logout
