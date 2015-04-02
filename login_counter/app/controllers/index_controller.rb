@@ -3,8 +3,8 @@ class IndexController < ApplicationController
 	end
 
   def login
-		id = params[:id]
-		pass = params[:pass]
+		id = params[:username]
+		pass = params[:password]
 
 		user = UserAccount.find_by(username: id, pass: pass)
 
@@ -28,8 +28,8 @@ class IndexController < ApplicationController
   end
 
 	def signup
-		id = params[:id]
-		pass = params[:pass]
+		id = params[:username]
+		pass = params[:password]
 
 		respond_to do |format|
 			if id.length < 5 or id.length > 20

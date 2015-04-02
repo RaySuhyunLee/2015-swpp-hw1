@@ -10,8 +10,8 @@ sendAjaxRequest = (url_str) ->
 		url: url_str
 		type: 'POST'
 		data:
-			id: $('#id').val()
-			pass: $('#pass').val()
+			username: $('#id').val()
+			password: $('#pass').val()
 		success: (data, status, response) ->
 			e = data.error_code
 			if e?
