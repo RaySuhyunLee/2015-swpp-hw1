@@ -1,3 +1,37 @@
 // Place all the styles related to the index controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	background-color: #1abc9d;
+	text-align: center;
+	font-family: Arial;
+	color: gray;
+}
+.LoginForm {
+	display: inline-block;
+	background-color: #ecf0f1;
+	padding-top: 20px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 40px;
+	text-align: center;
+	width: auto;
+	margin-top: 100px;
+	border-radius: 20px;
+	button {
+		display: block;
+		width: 100%;
+		background-color: #1abc9d;
+		cursor: pointer;
+		border: 0px;
+		border-radius: 5px;
+		padding: 11px;
+		margin-top: 10px;
+		transition: all 0.3s ease;
+		color: #fff;
+		font-weight: bold;
+	}
+	button:hover {
+		background-color: #09cca6
+	}
+}
