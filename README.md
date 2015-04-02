@@ -1,6 +1,8 @@
 # SWPP HW 1
 
-## GwaJaeGwaJaeGwaJae...
+### HOW TO USE
+http://raysuhyunlee.net:3000/
 
-### HOW TO
-http://raysuhyunlee.net:3000/index
+`login`: [POST] http://raysuhyunlee.net:3000/login
+`signup`: [POST] http://raysuhyunlee.net:3000/signup
+`clearData`: [POST] http://raysuhyunlee.net:3000/clearData
