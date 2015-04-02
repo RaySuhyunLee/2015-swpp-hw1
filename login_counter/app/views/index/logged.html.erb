@@ -1,3 +1,5 @@
-<p>Welcome, <%= @user.username %> :)</p>
-<p>You have logged in <%= @user.count %> times.</p>
-<%= button_to "logout", "/logout", :method => :get %>
+<div class="TopBox">
+	<p>Welcome, <%= @user.username %> :)</p>
+	<p>You have logged in <%= @user.count %> times.</p>
+	<%= button_to "Logout", "/logout", :method => :get, :class => 'Button' %>
+</div>

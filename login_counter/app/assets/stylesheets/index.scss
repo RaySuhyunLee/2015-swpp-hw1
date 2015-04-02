@@ -1,13 +1,16 @@
 // Place all the styles related to the index controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Refered http://designsparkle.com/login-form-templates/
+
 body {
 	background-color: #1abc9d;
 	text-align: center;
 	font-family: Arial;
 	color: gray;
 }
-.LoginForm {
+.TopBox {
 	display: inline-block;
 	background-color: #ecf0f1;
 	padding-top: 20px;
@@ -15,38 +18,50 @@ body {
 	padding-right: 50px;
 	padding-bottom: 40px;
 	text-align: center;
-	width: auto;
+	width: 320px;
 	margin-top: 100px;
 	border-radius: 20px;
 
-	input {
-		display: block;
-		width: 100%;
-		background-color: #fff;
-		border: 2px solid #fff;
-		border-radius: 5px;
-		padding: 10px;
-		color: gray;
+	.InputBox {
+
+		input {
+			display: block;
+			box-sizing: border-box;
+			width: 100%;
+			background-color: #fff;
+			border: 2px solid #fff;
+			border-radius: 5px;
+			padding: 10px;
+			margin-bottom: 10px;
+			color: gray;
+		}
+
+		input:focus{
+			border: 2px solid #1abc9d;
+		}
+
+	}
+	
+	.ButtonBox {
+		margin-top: 20px;
+
+		}
+	.Button {
+			display: block;
+			width: 100%;
+			background-color: #1abc9d;
+			cursor: pointer;
+			border: 0px;
+			border-radius: 5px;
+			padding: 11px;
+			margin-top: 10px;
+			transition: all 0.3s ease;
+			color: #fff;
+			font-weight: bold;
 	}
 
-	input:focus{
-		border: 2px solid #1abc9d;
+	.Button:hover {
+			background-color: #09cca6
 	}
 
-	button {
-		display: block;
-		width: 100%;
-		background-color: #1abc9d;
-		cursor: pointer;
-		border: 0px;
-		border-radius: 5px;
-		padding: 11px;
-		margin-top: 10px;
-		transition: all 0.3s ease;
-		color: #fff;
-		font-weight: bold;
-	}
-	button:hover {
-		background-color: #09cca6
-	}
 }
