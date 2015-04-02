@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 	
 	root 'index#index'
 
-	get 'index/logged'
+	get 'logged', to:'index#logged'
 	get '/logout', to: 'index#logout'
 	get '/data', to: 'data#index'
 
