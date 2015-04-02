@@ -59,11 +59,11 @@ class IndexController < ApplicationController
 		
 		if session[:username].nil? || session[:password].nil?
 			redirect_to '/'
-		end
-		
-		@user = UserAccount.find_by(username: session[:username], pass: session[:password])
-		if @user.nil?
-			redirect_to '/'
+		else
+			@user = UserAccount.find_by(username: session[:username], pass: session[:password])
+			if @user.nil?
+				redirect_to '/'
+			end
 		end
 
 	end
@@ -71,6 +71,7 @@ class IndexController < ApplicationController
 	def logout
 		session[:username] = nil
 		session[:password] = nil
+		redirect_to '/'
 	end
 
 end
